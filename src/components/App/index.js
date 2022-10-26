@@ -1,5 +1,6 @@
 import logo from '../../assets/images/logo.svg';
 import './App.css';
+import SearchButton from '../SearchButton';
 
 function App() {
   return (
@@ -7,17 +8,19 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Sufez avec une pleine conscience du mondee qui vous entoures
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
       </header>
+
+      <div className='App-body'>
+        <div className='search-zone'>
+          <SearchButton />
+        </div>
+
+      </div>
+
+
     </div>
   );
 }
