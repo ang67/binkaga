@@ -1,26 +1,22 @@
-import logo from '../../assets/images/logo.svg';
 import './App.css';
-import SearchButton from '../SearchButton';
+import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
+import Home from '../../pages/Home';
+import Render from '../../pages/Render';
+import { IconContext } from 'react-icons'
+import Header from '../Header';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Sufez avec une pleine conscience du mondee qui vous entoures
-        </p>
-
-      </header>
-
-      <div className='App-body'>
-        <div className='search-zone'>
-          <SearchButton />
-        </div>
-
-      </div>
-
-
+      <Router>
+        <Header />
+        <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/render" element={<Render />} />
+          </Routes>
+        </IconContext.Provider>
+      </Router>
     </div>
   );
 }

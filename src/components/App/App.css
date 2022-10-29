@@ -12,10 +12,17 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.engine-select {
+  border: 1px solid gray;
+  border-radius: 5px/5px;
+  padding: 5px;
+  left: 0px;
+  position: relative;
+  margin-bottom: 10px;
+}
 .App-header {
   background-color: #282c34;
-  min-height: 15vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,9 +38,11 @@
 }
 .search-zone {
   margin-top: 5em;
-  left: 35%;
-  position: relative;
-  width: 30%;
+  left: 30%;
+  width: 40%;
+  border-color: red;
+  color: red;
+  background-color: red;
 }
 .App-link {
   color: #61dafb;

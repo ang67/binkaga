@@ -1,17 +1,17 @@
 import React from "react";
 
-const SearchButton = () => {
+const Search = () => {
   return (
-    <div className="">
+    <div>
       <div className="form-outline">
             <input
               type="search"
               id="search"
               className="form-control"
-              placeholder="Effectuez une recherche comparée sur Binkaga ou saisisez l'url" />
+              placeholder="Effectuez une recherche comparée sur Binkaga ou saisisez l'url..." />
           </div>
     </div>
   );
 };
 
-export default SearchButton;
+export default Search;
