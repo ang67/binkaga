@@ -4,7 +4,7 @@ metadata:
   labels:
     app: binkaga
   name: binkaga
-  namespace: dev
+  namespace: prod
 spec:
   replicas: 1
   selector:
@@ -17,7 +17,7 @@ spec:
         app: binkaga
     spec:
       containers:
-      - image: binkaga:1.0
+      - image: binkaga:1.0-prd
         name: binkaga
         ports:
         - containerPort: 3000
@@ -35,13 +35,13 @@ metadata:
   labels:
     app: binkaga
   name: binkaga
-  namespace: dev
+  namespace: prod
 spec:
   type: ClusterIP
   ports:
-  - port: 3000
+  - port: 80
     protocol: TCP
-    targetPort: 3000
+    targetPort: 80
   selector:
     app: binkaga
 
@@ -50,18 +50,18 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: demo-localhost
-  namespace: dev
+  name: binkaga-prd
+  namespace: prod
 spec:
   ingressClassName: nginx
   rules:
-  - host: demo.localdev.me
+  - host: demo.localprod.me
     http:
       paths:
       - backend:
           service:
             name: binkaga
             port:
-              number: 3000
+              number: 80
         path: /
         pathType: Prefix

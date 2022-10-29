@@ -5,3 +5,4 @@ build
 Dockerfile
 Dockerfile.prod
 k8s
+README.md
